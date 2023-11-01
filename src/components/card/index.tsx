@@ -1,20 +1,29 @@
-import React from 'react'
-//import styles
-import style from "./card.module.css"
+import React from "react";
+// import styles
+import s from "./card.module.css";
+// import "./index.css";
 
-const card = () => {
-    return (
-        <>
-            <div className={style.card}>
-                <h2>title card</h2>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio modi nisi quam aperiam placeat 
-                    voluptatem rerum, deserunt ut fugiat neque doloremque nam consequuntur accusantium ratione officiis 
-                    possimus ipsa sit! Eveniet.
-                </p>
-            </div>
-        </>
-    )
+interface Props {
+  key: any;
+  data: {
+    title: string;
+    description: string;
+  };
+  num: number;
 }
 
-export default card
+const card = (props: Props) => {
+  const { title, description } = props.data;
+
+  return (
+    <>
+      <div className={s.card}>
+        <h2>{title}</h2>
+        <p>{description}</p>
+        <h1>{props.num}</h1>
+      </div>
+    </>
+  );
+};
+
+export default card;
