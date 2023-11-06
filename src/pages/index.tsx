@@ -1,11 +1,61 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import styles from '@/styles/Home.module.css'
-import Image from 'next/image'
-//impport img
-import img from "@/img/kha.jpg";
+import { useState, useEffect, useMemo } from "react";
+import Head from "next/head";
+import Link from "next/link";
+import Image from "next/image";
+import styles from "@/styles/Home.module.css";
+// import components
+import Card from "@/components/card";
+import Banner from "@/components/banner";
+// modules
+import { Server } from "@/modules/server";
+// pictures
+import img from "@/assets/img/barbie.jpg";
+
+interface User {
+  name: string;
+  mail: string;
+  comment: string;
+}
 
 export default function Home() {
+  const data = [
+    { id: 1, title: "Test1", description: "Lorem1" },
+    { id: 2, title: "Test2", description: "Lorem2" },
+    { id: 3, title: "Test3", description: "Lorem3" },
+    { id: 4, title: "Test4", description: "Lorem4" },
+    { id: 5, title: "Test5", description: "Lorem5" },
+  ];
+  // init
+  const server = new Server();
+  // states
+  const [number, setNumber] = useState<number>(0);
+  // const [name, setName] = useState<string>("");
+  let [user, setUser] = useState<User>({
+    name: "test",
+    mail: "test",
+    comment: "test",
+  });
+
+  // on loan
+  useEffect(() => {
+    console.log("UseEffect", number);
+  }, [number]);
+
+  // calc
+  const adult = useMemo(() => {
+    if (number >= 18) {
+      return "Повнолітній";
+    } else {
+      return "Не повнолітній";
+    }
+  }, [number]);
+
+  // functions
+  const reverseProps = (data: string) => {
+    console.log("Revers work!")
+    console.log(data);
+  }
+
   return (
     <>
       <Head>
@@ -15,38 +65,98 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div className='taskOne'>
-        TASK 1, 2 <br /> <br />
-        <h1>Харків</h1>
-        <Image src={img} width={100} height={100} alt='k'/>
-        {/* <span className='imgOne'></span> */}
-        <h3>Ха́рків — місто в Україні. Розташований на північному сході України, Слобожанщині, науковий центр України, адміністративний центр Харківської області. Друге за кількістю мешканців місто України з населенням 1 421 125 осіб. Площа міста — 350 км². Разом із прилеглими містами та районами утворює Харківську агломерацію з людністю понад 2 млн осіб. Місто-герой України (з 2022 року).
-
-Великий науковий, культурний, промисловий і транспортний осередок України, був третім індустріальним центром у колишньому СРСР. 60 науково-дослідних інститутів, 41 вищий навчальний заклад, серед яких ХНУ імені В. Н. Каразіна, який входить до найкращих 500 ВНЗ світу та НТУ «ХПІ», який входить до найкращих 1000, 8 музеїв, міська картинна галерея, 7 державних театрів і кілька десятків недержавних, 80 бібліотек.
-
-Володіє повним комплектом нагород Ради Європи: Європейським Дипломом, Почесним Прапором, Почесною Відзнакою і Призом Європи.
-
-6 березня 2022 року Указом Президента України з метою відзначення подвигу, масового героїзму та стійкості громадян, виявлених у захисті своїх міст під час відсічі збройної агресії Російської Федерації проти України місту присвоєно почесну відзнаку «Місто-герой України»</h3>
+        HELLO WORLD!
+        <Banner reverseProps={reverseProps} title="test props" description="Lorem Ipsum" />
+        <nav>
+          <ul>
+            <li>
+              <Link href="/about">About</Link>
+            </li>
+            <li>
+              <Link href="/news">News</Link>
+            </li>
+            <li></li>
+          </ul>
+        </nav>
+        <div>{adult}</div>
+        <div>{number}</div>
+        <div>
+          {/* Increment */}
+          <button
+            onClick={() => {
+              setNumber(number + 1);
+            }}
+          >
+            {" "}
+            +{" "}
+          </button>
+          {/* Decrement */}
+          <button
+            onClick={() => {
+              setNumber(number - 1);
+            }}
+          >
+            {" "}
+            -{" "}
+          </button>
         </div>
-
-       <div className='taskTwo'>
-        Task 3,4
-        <h1>Герман Гессе "Сиддхартха"</h1>
-        <h2>Автор: Герман Гессе<br />Назва: Сіддхартха <br />Жанр: алегорічний роман <br />Дата публікації: 1922 рік</h2>
-        <h3>Короткий опис: <br />  Аллегорический роман-притча Германа Гессе, впервые был опубликован в берлинском издательстве S. Fischer Verlag в 1922 году. лавные герои - юный брахман Сиддхартха и его близкий товарищ Говинда. Они посвящают свою жизнь поиску Атмана. Атман - одно из ключевых понятий индийской философии и индуизма. Это вечная сущность, высшее "Я", которое есть в каждом человеке и у всех живых существ в принципе.</h3>
-
-       </div>
-
-
-
-
-
-
-
-
-        {/* <Link href="/about">About</Link>
-        <a href="/about">About</a> */}
+        {/* {data.map((e: any) => {
+          return <Card num={number} data={e} key={e.id} />;
+        })} */}
+        {/* form */}
+        <form action="">
+          <input
+            value={user.name}
+            type="text"
+            placeholder="Enter your name: "
+            onChange={(e) => {
+              setUser({
+                ...user,
+                name: e.target.value,
+              });
+            }}
+          />
+          <input
+            value={user.mail}
+            type="mail"
+            placeholder="Enter your mail: "
+            onChange={(e) => {
+              setUser({
+                ...user,
+                mail: e.target.value,
+              });
+            }}
+          />
+          <textarea
+            value={user.comment}
+            placeholder="Enter text: "
+            onChange={(e) => {
+              setUser({
+                ...user,
+                comment: e.target.value,
+              });
+            }}
+          ></textarea>
+          <input
+            onClick={(e) => {
+              e.preventDefault();
+              server.post("/endpoint", user);
+            }}
+            type="submit"
+          />
+        </form>
+        <Image
+          style={{
+            marginLeft: 25,
+            padding: 25,
+          }}
+          src={img}
+          width={300}
+          height={300}
+          alt="test"
+          quality={85}
+        />
       </main>
     </>
-  )
+  );
 }

@@ -1,32 +1,5 @@
-.taskOne h1{
-    text-align: center;
-    color: blue;
-}
-
-.imgOne {
-    background-image: url('/src/img/kha.jpg');
-}
-
-.taskOne h3 {
-    margin: 100px;
-    text-decoration: dashed;
-}
-
-.taskTwo {
-    padding-top: 100px;
-}
-.taskTwo h1{
-    text-align: center;
-    color:chocolate;
-}
-
-.taskTwo h3{
-    text-align: center;
-    margin-left: 100px;
-    margin-right: 100px;
-    color:rgb(137, 91, 59);
-}
-
-.taskTwo h2{
-    color:rgb(137, 91, 59);
+form,
+input,
+textarea {
+    display: block;
 }
