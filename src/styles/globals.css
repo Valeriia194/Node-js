@@ -1,5 +1,54 @@
-form,
-input,
-textarea {
-    display: block;
+.taskOne h1{
+    text-align: center;
+    color:burlywood;
+}
+
+.taskOne .film {
+    color: brown;
+}
+
+.taskOne h2{
+    margin-left: 100px;
+}
+
+.taskOne h3{
+    margin-left: 100px;
+}
+
+/* TASK 2------------------------------------ */
+.taskTwo h1{
+    text-align: center;
+    color:burlywood;
+}
+
+.taskTwo .name {
+    color: brown;
+}
+
+.taskTwo h2{
+    margin-left: 100px;
+}
+
+.taskTwo h3{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+/* TASK 4------------------------------------ */
+.taskFour h1{
+    text-align: center;
+    color:burlywood;
+}
+
+.taskFour .animal {
+    color: brown;
+}
+
+.taskFour h2{
+    margin-left: 100px;
+}
+
+.taskFour h3{
+    margin-left: 100px;
+    margin-right: 100px;
 }

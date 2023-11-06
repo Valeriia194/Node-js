@@ -1,61 +1,15 @@
-import { useState, useEffect, useMemo } from "react";
-import Head from "next/head";
-import Link from "next/link";
-import Image from "next/image";
-import styles from "@/styles/Home.module.css";
-// import components
-import Card from "@/components/card";
-import Banner from "@/components/banner";
-// modules
-import { Server } from "@/modules/server";
-// pictures
-import img from "@/assets/img/barbie.jpg";
+import Head from 'next/head'
+import Link from 'next/link'
+import styles from '@/styles/Home.module.css'
+import Image from 'next/image'
+//impport img
+import img from "@/img/film.jpg";
+import card from "@/img/card.jpg";
+import cat from "@/img/cat.jpg";
 
-interface User {
-  name: string;
-  mail: string;
-  comment: string;
-}
+
 
 export default function Home() {
-  const data = [
-    { id: 1, title: "Test1", description: "Lorem1" },
-    { id: 2, title: "Test2", description: "Lorem2" },
-    { id: 3, title: "Test3", description: "Lorem3" },
-    { id: 4, title: "Test4", description: "Lorem4" },
-    { id: 5, title: "Test5", description: "Lorem5" },
-  ];
-  // init
-  const server = new Server();
-  // states
-  const [number, setNumber] = useState<number>(0);
-  // const [name, setName] = useState<string>("");
-  let [user, setUser] = useState<User>({
-    name: "test",
-    mail: "test",
-    comment: "test",
-  });
-
-  // on loan
-  useEffect(() => {
-    console.log("UseEffect", number);
-  }, [number]);
-
-  // calc
-  const adult = useMemo(() => {
-    if (number >= 18) {
-      return "Повнолітній";
-    } else {
-      return "Не повнолітній";
-    }
-  }, [number]);
-
-  // functions
-  const reverseProps = (data: string) => {
-    console.log("Revers work!")
-    console.log(data);
-  }
-
   return (
     <>
       <Head>
@@ -65,98 +19,45 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        HELLO WORLD!
-        <Banner reverseProps={reverseProps} title="test props" description="Lorem Ipsum" />
-        <nav>
-          <ul>
-            <li>
-              <Link href="/about">About</Link>
-            </li>
-            <li>
-              <Link href="/news">News</Link>
-            </li>
-            <li></li>
-          </ul>
-        </nav>
-        <div>{adult}</div>
-        <div>{number}</div>
-        <div>
-          {/* Increment */}
-          <button
-            onClick={() => {
-              setNumber(number + 1);
-            }}
-          >
-            {" "}
-            +{" "}
-          </button>
-          {/* Decrement */}
-          <button
-            onClick={() => {
-              setNumber(number - 1);
-            }}
-          >
-            {" "}
-            -{" "}
-          </button>
-        </div>
-        {/* {data.map((e: any) => {
-          return <Card num={number} data={e} key={e.id} />;
-        })} */}
-        {/* form */}
-        <form action="">
-          <input
-            value={user.name}
-            type="text"
-            placeholder="Enter your name: "
-            onChange={(e) => {
-              setUser({
-                ...user,
-                name: e.target.value,
-              });
-            }}
-          />
-          <input
-            value={user.mail}
-            type="mail"
-            placeholder="Enter your mail: "
-            onChange={(e) => {
-              setUser({
-                ...user,
-                mail: e.target.value,
-              });
-            }}
-          />
-          <textarea
-            value={user.comment}
-            placeholder="Enter text: "
-            onChange={(e) => {
-              setUser({
-                ...user,
-                comment: e.target.value,
-              });
-            }}
-          ></textarea>
-          <input
-            onClick={(e) => {
-              e.preventDefault();
-              server.post("/endpoint", user);
-            }}
-            type="submit"
-          />
-        </form>
-        <Image
-          style={{
-            marginLeft: 25,
-            padding: 25,
-          }}
-          src={img}
-          width={300}
-          height={300}
-          alt="test"
-          quality={85}
-        />
+        <div className='taskOne'>
+        TASK 1 -----------------------------------------------------------------<br /> <br />
+        <h1>Favourite film</h1>
+        <h1 className='film'>See No Evil, Hear No Evil</h1>
+        <Image style={{marginLeft: 500, paddingTop: 50}} src={img} width={500} height={300} alt='k'/>
+       
+
+        <h2>Director: Arthur Hiller<br />Stars: Richard Pryor, Gene Wilder, Joan Severance <br />Genre: Comedy <br />Date: 1989</h2>
+        <h3>Short telling: <br />  A man is murdered. Two men witness it. A blind man who hears the killer, and a deaf man who sees them. The police don't think they're credible witnesses, but the killers don't want to take any chances. The two men must now work together to save themselves and bring the killers to justice.</h3>
+       </div>
+
+     
+       TASK 2 -----------------------------------------------------------------<br /> <br />
+
+       <div className='taskTwo'>
+       <h1>Personal card</h1>
+        <h1 className='name'>John Dow Dowich</h1>
+        <Image style={{marginLeft: 500, paddingTop: 50}} src={card} width={500} height={300} alt='k'/>
+        <h2>Date of Birth: 13.06.1996 <br />Mail: johndow@gmail.com <br />City: Liberty City <br />Work: Internet Police</h2>
+        <h3>Skills: <br />Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam earum laboriosam in cupiditate at voluptate sapiente modi vitae est? Optio quam quibusdam magnam! Libero excepturi labore vel nobis dolorem ea.</h3>
+       </div>
+
+      	
+       TASK 4 -----------------------------------------------------------------<br /> <br />
+       <div className='taskFour'>
+       <h1>Animal</h1>
+        <h1 className='animal'>Kitty Cat</h1>
+        <Image style={{marginLeft: 500, paddingTop: 50}} src={cat} width={500} height={300} alt='k'/>
+        <h2>Date of Birth: 13.06.2006 <br />Animal: cat <br />City: Liberty City <br />Color: Black</h2>
+        <h3>About: <br />Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam earum laboriosam in cupiditate at voluptate sapiente modi vitae est? Optio quam quibusdam magnam! Libero excepturi labore vel nobis dolorem ea.</h3>
+       </div>
+
+
+
+
+
+        {/* <Link href="/about">About</Link>
+        <a href="/about">About</a> */}
       </main>
     </>
-  );
+  )
 }
