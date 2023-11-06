@@ -1,7 +1,10 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import styles from '@/styles/Home.module.css'
-
+import Image from 'next/image'
+//impport img
+import img from "@/img/kha.jpg";
+import imgT from "@/img/pic_two.jpg";
 
 export default function Home() {
   return (
@@ -16,7 +19,11 @@ export default function Home() {
         <div className='taskOne'>
         TASK 1, 2 <br /> <br />
         <h1>Харків</h1>
-        <span className='imgOne'></span>
+        
+        <Image style={{marginLeft: 100, paddingTop: 50}} src={img} width={300} height={200} alt='k'/>
+        <Image style={{marginLeft: 200, paddingTop: 50}} src={imgT} width={300} height={200} alt='k'/>
+       
+        {/* <span className='imgOne'></span> */}
         <h3>Ха́рків — місто в Україні. Розташований на північному сході України, Слобожанщині, науковий центр України, адміністративний центр Харківської області. Друге за кількістю мешканців місто України з населенням 1 421 125 осіб. Площа міста — 350 км². Разом із прилеглими містами та районами утворює Харківську агломерацію з людністю понад 2 млн осіб. Місто-герой України (з 2022 року).
 
 Великий науковий, культурний, промисловий і транспортний осередок України, був третім індустріальним центром у колишньому СРСР. 60 науково-дослідних інститутів, 41 вищий навчальний заклад, серед яких ХНУ імені В. Н. Каразіна, який входить до найкращих 500 ВНЗ світу та НТУ «ХПІ», який входить до найкращих 1000, 8 музеїв, міська картинна галерея, 7 державних театрів і кілька десятків недержавних, 80 бібліотек.

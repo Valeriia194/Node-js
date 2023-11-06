@@ -14,6 +14,7 @@
 
 .taskTwo {
     padding-top: 100px;
+    margin-left: 100px;
 }
 .taskTwo h1{
     text-align: center;
@@ -30,3 +31,4 @@
 .taskTwo h2{
     color:rgb(137, 91, 59);
 }
+
