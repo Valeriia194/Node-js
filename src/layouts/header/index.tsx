@@ -16,6 +16,9 @@ const Header = () => {
         <li>
           <a href={`/products`}>Products</a>
         </li>
+        <li>
+          <a href={`/news`}>News</a>
+        </li>
       </ul>
     </>
   );

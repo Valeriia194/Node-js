@@ -1,54 +1,11 @@
-.taskOne h1{
-    text-align: center;
-    color:burlywood;
+form,
+input,
+textarea {
+    display: block;
 }
 
-.taskOne .film {
-    color: brown;
-}
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-.taskOne h2{
-    margin-left: 100px;
-}
-
-.taskOne h3{
-    margin-left: 100px;
-}
-
-/* TASK 2------------------------------------ */
-.taskTwo h1{
-    text-align: center;
-    color:burlywood;
-}
-
-.taskTwo .name {
-    color: brown;
-}
-
-.taskTwo h2{
-    margin-left: 100px;
-}
-
-.taskTwo h3{
-    margin-left: 100px;
-    margin-right: 100px;
-}
-
-/* TASK 4------------------------------------ */
-.taskFour h1{
-    text-align: center;
-    color:burlywood;
-}
-
-.taskFour .animal {
-    color: brown;
-}
-
-.taskFour h2{
-    margin-left: 100px;
-}
-
-.taskFour h3{
-    margin-left: 100px;
-    margin-right: 100px;
+* {
+    font-family: 'Manrope', sans-serif;
 }
