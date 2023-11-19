@@ -1,15 +1,28 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import styles from '@/styles/Home.module.css'
-import Image from 'next/image'
-//impport img
-import img from "@/img/film.jpg";
-import card from "@/img/card.jpg";
-import cat from "@/img/cat.jpg";
-
-
+import Head from "next/head";
+import Link from "next/link";
+import styles from "@/styles/Home.module.css";
+// import components
+import Card from "@/components/card";
 
 export default function Home() {
+  const data = [
+    { title: "Name", description: "Restoran #1" },
+    { title: "Adress", description: "Super street 3" },
+    { title: "Rate", description: "5 stars" },
+    { title: "Type of kitchen", description: "Italian" },
+    { title: "Foto of restaurante", description: "Lorem5" },
+  ];
+
+  // const server = new Server();
+  // // states
+  // const [number, setNumber] = useState<number>(0);
+  // // const [name, setName] = useState<string>("");
+  // let [user, setUser] = useState<User>({
+  //   name: "test",
+  //   mail: "test",
+  //   comment: "test",
+  // });
+
   return (
     <>
       <Head>
@@ -19,45 +32,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div className='taskOne'>
-        TASK 1 -----------------------------------------------------------------<br /> <br />
-        <h1>Favourite film</h1>
-        <h1 className='film'>See No Evil, Hear No Evil</h1>
-        <Image style={{marginLeft: 500, paddingTop: 50}} src={img} width={500} height={300} alt='k'/>
+        Task 1
        
-
-        <h2>Director: Arthur Hiller<br />Stars: Richard Pryor, Gene Wilder, Joan Severance <br />Genre: Comedy <br />Date: 1989</h2>
-        <h3>Short telling: <br />  A man is murdered. Two men witness it. A blind man who hears the killer, and a deaf man who sees them. The police don't think they're credible witnesses, but the killers don't want to take any chances. The two men must now work together to save themselves and bring the killers to justice.</h3>
-       </div>
-
-     
-       TASK 2 -----------------------------------------------------------------<br /> <br />
-
-       <div className='taskTwo'>
-       <h1>Personal card</h1>
-        <h1 className='name'>John Dow Dowich</h1>
-        <Image style={{marginLeft: 500, paddingTop: 50}} src={card} width={500} height={300} alt='k'/>
-        <h2>Date of Birth: 13.06.1996 <br />Mail: johndow@gmail.com <br />City: Liberty City <br />Work: Internet Police</h2>
-        <h3>Skills: <br />Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam earum laboriosam in cupiditate at voluptate sapiente modi vitae est? Optio quam quibusdam magnam! Libero excepturi labore vel nobis dolorem ea.</h3>
-       </div>
-
-      	
-       TASK 4 -----------------------------------------------------------------<br /> <br />
-       <div className='taskFour'>
-       <h1>Animal</h1>
-        <h1 className='animal'>Kitty Cat</h1>
-        <Image style={{marginLeft: 500, paddingTop: 50}} src={cat} width={500} height={300} alt='k'/>
-        <h2>Date of Birth: 13.06.2006 <br />Animal: cat <br />City: Liberty City <br />Color: Black</h2>
-        <h3>About: <br />Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam earum laboriosam in cupiditate at voluptate sapiente modi vitae est? Optio quam quibusdam magnam! Libero excepturi labore vel nobis dolorem ea.</h3>
-       </div>
-
-
-
-
-
-        {/* <Link href="/about">About</Link>
-        <a href="/about">About</a> */}
+        {data.map((e: any) => {
+          return <Card data={e} key={e} />;
+        })}
       </main>
     </>
-  )
+  );
 }
