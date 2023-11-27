@@ -10,10 +10,17 @@ interface Props {
 const banner = ({ title, description, reverseProps }: Props) => {
   return (
     <>
+      <h1>Test</h1>
       <div className={s.banner}>
         <h1>{title}</h1>
         <p>{description}</p>
-        <button onClick={reverseProps("test")}>Click On</button>
+        <button
+          onClick={() => {
+            reverseProps("test");
+          }}
+        >
+          Buy
+        </button>
       </div>
     </>
   );

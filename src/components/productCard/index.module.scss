@@ -1,0 +1,14 @@
+@import "/src/styles/variables.scss";
+@import "/src/styles/mixins.scss";
+
+.card {
+  padding: 12px;
+  border: 1px solid red;
+  margin-bottom: 10px;
+  &__btn {
+    @include btn_buy(12px, 12px, #f00, 12px, #fff);
+    &_del {
+      @include btn_buy(12px, 12px, #f00, 12px, #fff);
+    }
+  }
+}
