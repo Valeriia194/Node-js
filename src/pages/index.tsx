@@ -3,6 +3,7 @@ import Link from "next/link";
 import styles from "@/styles/Home.module.css";
 // import components
 import Card from "@/components/card";
+import RegistrationForm from '@/components/registration';
 
 export default function Home() {
   const data = [
@@ -12,6 +13,21 @@ export default function Home() {
     { title: "Type of kitchen", description: "Italian" },
     { title: "Foto of restaurante", description: "Lorem5" },
   ];
+
+    // registration 
+    const App = () => {
+      const handleRegister = (data: any) => {
+          console.log(data);
+      };
+  
+      return (
+          <div>
+              <h1>Registration</h1>
+              <RegistrationForm onRegister={handleRegister} />
+          </div>
+      );
+  };
+  
 
   // const server = new Server();
   // // states
@@ -37,6 +53,10 @@ export default function Home() {
         {data.map((e: any) => {
           return <Card data={e} key={e} />;
         })}
+
+        Task 3
+        <App></App>
+
       </main>
     </>
   );
