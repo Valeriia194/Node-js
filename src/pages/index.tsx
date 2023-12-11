@@ -3,6 +3,8 @@ import Link from 'next/link'
 import styles from '@/styles/Home.module.css'
 
 
+
+
 export default function Home() {
   return (
     <>
@@ -14,9 +16,11 @@ export default function Home() {
       </Head>
       <main>
         HELLO WORLD!
-        <Link href="/about">About</Link>
-        <a href="/about">About</a>
+
+        {/* <Link href="/about">About</Link> */}
       </main>
     </>
   )
 }
+
+
