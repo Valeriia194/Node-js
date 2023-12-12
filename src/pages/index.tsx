@@ -1,11 +1,30 @@
+import React, { useEffect, useState } from "react";
 import Head from 'next/head'
+import Image from "next/image";
 import Link from 'next/link'
 import styles from '@/styles/Home.module.css'
 
-
+import img from '@/assets/img/Joystick.png'
 
 
 export default function Home() {
+  // store products
+  const [products, setProducts] = useState([]);
+
+  const getAllProducts = async () => {
+    return await fetch("https://fakestoreapi.com/products")
+      .then((res) => res.json())
+      .then((json) => {
+        setProducts(json);
+        return json;
+      });
+  };
+
+  // call getAllProducts
+  useEffect(() => {
+    getAllProducts();
+  }, []);
+
   return (
     <>
       <Head>
@@ -16,11 +35,31 @@ export default function Home() {
       </Head>
       <main>
         HELLO WORLD!
-
+        <div>
+        <Image
+          style={{
+            marginLeft: 525,
+            padding: 25, }}
+          src={img}
+          width={400}
+          height={300}
+          alt="test"
+          quality={85}
+        />
+        </div>
+        
+        {/*Show products*/}
+        {products.map((product) => (
+          <div key={product.id}>
+            <h2>{product.title}</h2>
+            <p>{product.description}</p>
+            <Image src={img} alt="img" />
+            {/* <img src={product.image} alt={product.title} /> */}
+          </div>
+        ))}
+        
         {/* <Link href="/about">About</Link> */}
       </main>
     </>
   )
 }
-
-
