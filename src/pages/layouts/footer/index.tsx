@@ -16,7 +16,7 @@ const Footer = () => {
         </div>
         <div>
           <h3>About us</h3>
-          <ul>
+          <ul style={{ listStyle: 'none', textAlign: 'left'}}>
             <li><a href="#" style={{ color: 'white' }}>Zeux</a></li>
             <li><a href="#" style={{ color: 'white' }}>Portfolio</a></li>
             <li><a href="#" style={{ color: 'white' }}>Careers</a></li>
