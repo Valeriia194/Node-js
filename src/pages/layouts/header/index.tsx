@@ -11,7 +11,7 @@ const Header = () => {
             <a href="#">About Us</a>
             <a href="#">Portfolio</a>
             <a href="#">News</a>
-            <a href="#">Contact Us</a>
+            <button style={{ backgroundColor: 'orange', border: 'none', padding: '10px 20px', color: 'white', cursor: 'pointer', borderRadius: '12px' }}>Contact us</button>
         </nav>
     </div>
     </>

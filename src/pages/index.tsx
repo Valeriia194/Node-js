@@ -4,7 +4,9 @@ import Image from "next/image";
 import Link from 'next/link'
 import styles from '@/styles/Home.module.css'
 
+// importing images
 import img from '@/assets/img/Joystick.png'
+import img2 from '@/assets/img/Frame1.png'
 
 
 export default function Home() {
@@ -33,7 +35,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <main style={{ padding: '0 60px' }}>
+        
         
         {/* Text
         <div>
@@ -49,15 +52,23 @@ export default function Home() {
         />
         </div> */}
         
-        {/*Show products*/}
-        {products.map((product) => (
-          <div key={product.id}>
-            <h2>{product.title}</h2>
-            <p>{product.description}</p>
+         {/*Show product*/}
+        {products.length > 0 && (
+          <div key={products[0].id} style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <div style={{ marginRight: '50px' }}>
+              <h2>{products[0].title}</h2>
+              <p>{products[0].description}</p>
+              <button style={{ backgroundColor: 'orange', border: 'none', padding: '10px 20px', color: 'white', cursor: 'pointer', borderRadius: '12px' }}>Get more details</button>
+            </div>
             <Image src={img} alt="img" />
-            {/* <img src={product.image} alt={product.title} /> */}
           </div>
-        ))}
+        )}
+
+       {/*Camos text and image*/}
+       <div style={{ width: '100%',  top: '809px', left: '161.07px' }}>
+          <h2 style={{ opacity: '0.1', position: 'absolute', zIndex: '1', fontSize: 100 }}>Camos</h2>
+          <Image src={img2} alt="img" style={{ width: '1370px', height: '610px' }} />
+        </div>
         
         {/* <Link href="/about">About</Link> */}
       </main>
