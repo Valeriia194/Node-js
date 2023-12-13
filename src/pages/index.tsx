@@ -7,6 +7,8 @@ import styles from '@/styles/Home.module.css'
 // importing images
 import img from '@/assets/img/Joystick.png'
 import img2 from '@/assets/img/Frame1.png'
+import img4 from '@/assets/img/41.png'
+import semi from '@/assets/img/semi.png'
 
 
 export default function Home() {
@@ -38,20 +40,6 @@ export default function Home() {
       <main style={{ padding: '0 60px' }}>
         
         
-        {/* Text
-        <div>
-        <Image
-          style={{
-            marginLeft: 525,
-            padding: 25, }}
-          src={img}
-          width={400}
-          height={300}
-          alt="test"
-          quality={85}
-        />
-        </div> */}
-        
          {/*Show product*/}
         {products.length > 0 && (
           <div key={products[0].id} style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -68,6 +56,25 @@ export default function Home() {
        <div style={{ width: '100%',  top: '809px', left: '161.07px' }}>
           <h2 style={{ opacity: '0.1', position: 'absolute', zIndex: '1', fontSize: 100 }}>Camos</h2>
           <Image src={img2} alt="img" style={{ width: '1370px', height: '610px' }} />
+        </div>
+
+         {/*Currently trading Games block*/}
+         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '100px', paddingLeft: '60px', paddingRight: '60px' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+            <h2>Currently trading Games</h2>
+            <button style={{ backgroundColor: 'orange', border: 'none', padding: '10px 20px', color: 'white', cursor: 'pointer', borderRadius: '12px' }}>See All</button>
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', marginTop: '20px' }}>
+            <Image src={img4} alt="img" />
+            <Image src={img4} alt="img" />
+            <Image src={img4} alt="img" />
+            <Image src={img4} alt="img" />
+          </div>
+        </div>
+
+        {/*Full width semi-transparent image*/}
+        <div style={{ marginTop: '30px' }}>
+        <Image src={semi} alt="img" style={{ width: '100%', opacity: '1.5', filter: 'grayscale(100%)' }} />
         </div>
         
         {/* <Link href="/about">About</Link> */}
