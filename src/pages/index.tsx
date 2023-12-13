@@ -34,7 +34,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        HELLO WORLD!
+        
+        {/* Text
         <div>
         <Image
           style={{
@@ -46,7 +47,7 @@ export default function Home() {
           alt="test"
           quality={85}
         />
-        </div>
+        </div> */}
         
         {/*Show products*/}
         {products.map((product) => (

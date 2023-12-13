@@ -1,8 +1,9 @@
 .header {
     display: flex;
     justify-content: space-between;
-    padding: 10px;
-    background-color: #f8f9fa;
+    padding: 20px;
+    background-color: black;
+    color: aliceblue;
 }
 .header div {
     font-weight: bold;

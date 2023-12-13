@@ -1,3 +1,5 @@
+
+
 form,
 input,
 textarea {
@@ -10,3 +12,7 @@ textarea {
     font-family: 'Manrope', sans-serif;
 }
 
+main {
+    color: aliceblue;
+    background-color: black;
+}
