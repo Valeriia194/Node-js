@@ -16,6 +16,9 @@ import fire from'@/assets/img/fire.png'
 import cod from '@/assets/img/COD.png'
 
 
+import { connect } from 'react-redux'
+
+
 export default function Home() {
   // store products
   const [products, setProducts] = useState([]);
@@ -34,6 +37,7 @@ export default function Home() {
     getAllProducts();
   }, []);
 
+
   return (
     <>
       <Head>
@@ -51,7 +55,12 @@ export default function Home() {
             <div style={{ marginRight: '50px' }}>
               <h2>{products[0].title}</h2>
               <p>{products[0].description}</p>
-              <button style={{ backgroundColor: 'orange', border: 'none', padding: '10px 20px', color: 'white', cursor: 'pointer', borderRadius: '12px' }}>Get more details</button>
+              
+              <Link href="/about">
+  <button style={{ backgroundColor: 'orange', border: 'none', padding: '10px 20px', color: 'white', cursor: 'pointer', borderRadius: '12px' }}>
+    Read NEWS
+  </button>
+</Link>
             </div>
             <Image src={img} alt="img" />
           </div>
@@ -119,8 +128,7 @@ export default function Home() {
         <div style={{ marginTop: '30px' }}>
         <Image src={semi} alt="img" style={{ marginLeft: 40, width: '90%', opacity: '1.5', filter: 'grayscale(100%)' }} />
         </div>
-        
-        {/* <Link href="/about">About</Link> */}
+      
       </main>
     </>
   )

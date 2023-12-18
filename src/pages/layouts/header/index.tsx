@@ -7,7 +7,7 @@ const Header = () => {
     <div className={s.header}>
         <div>GameCOM</div>
         <nav>
-            <a href="#">Home</a>
+            <a href="/">Home</a>
             <a href="#">About Us</a>
             <a href="#">Portfolio</a>
             <a href="#">News</a>
